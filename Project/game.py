@@ -36,7 +36,6 @@ class RockPaperScissors:
                 self.current_scores[lines.split()[0]] = int(lines.split()[1])
             if not rating.read():
                 print(f'{self.name} 0', file=rating, flush=True)
-            rating.close()
 
     def save_score(self):
         if not path.exists('rating.txt'):
@@ -44,7 +43,6 @@ class RockPaperScissors:
         with open('rating.txt', 'w+') as score:
             for k, v in self.current_scores.items():
                 print(f'{k} {v}', file=score, flush=True)
-        score.close()
 
     def input_check(self, opt):
         if opt not in self.def_options:

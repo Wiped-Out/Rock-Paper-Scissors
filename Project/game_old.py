@@ -23,7 +23,6 @@ class RockPaperScissors:
         with open('rating.txt') as rating:
             for lines in rating.readlines():
                 self.current_scores[lines.split()[0]] = lines.split()[1]
-            rating.close()
 
     def game(self, inp):
         if inp not in self.options:
